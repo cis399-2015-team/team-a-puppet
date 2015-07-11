@@ -1,4 +1,7 @@
-node ip-10-0-8-251{
+node ip-10-0-8-251
+{
+include sshd
+
 cron {"puppet update":
 	command => "cd /etc/puppet && git pull -q origin master",
 	user => root,
@@ -6,6 +9,12 @@ cron {"puppet update":
 	 }
 }
 
-node ip-10-0-8-128{}
+node ip-10-0-8-128
+{
+	
+}
 
-node ip-10-0-8-17{}
+node ip-10-0-8-17
+{
+	
+}
