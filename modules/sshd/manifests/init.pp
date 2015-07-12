@@ -9,8 +9,8 @@ class sshd
 	{
 		"/etc/puppet.conf":
 		source => 
-		["puppet:///modules/sshd/$hostname/sshd_config",
-		"puppet:///modules/sshd/sshd_config", ], 
+		["puppet:///modules/sshd/$hostname/sshd_config.conf",
+		"puppet:///modules/sshd/sshd_config.conf", ], 
 	
 
 	mode => 444,
@@ -30,9 +30,9 @@ class sshd
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["sshd"],
-		File["/etc/puppet/modules/sshd/sshd_config"] ],
+		File["/etc/puppet/modules/sshd/sshd_config.conf"] ],
 
-		subscribe => File["/etc/puppet/modules/sshd/sshd_config"],
+		subscribe => File["/etc/puppet/modules/sshd/sshd_config.conf"],
 
 	}
  }
