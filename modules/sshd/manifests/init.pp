@@ -1,4 +1,4 @@
-sshd
+class sshd
 {
 	package{
 		"sshd": ensure => isntalled;
