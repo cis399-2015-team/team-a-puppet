@@ -30,9 +30,9 @@ class sshd
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["sshd"],
-		File["/etc/sshd_config"] ],
+		File["/etc/puppet/modules/sshd/sshd_config"] ],
 
-		subscribe => File["/etc/sshd_config"],
+		subscribe => File["/etc/puppet/modules/sshd/sshd_config"],
 
 	}
  }
