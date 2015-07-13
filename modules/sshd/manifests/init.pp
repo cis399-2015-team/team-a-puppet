@@ -2,7 +2,7 @@ class sshd
 {
 	package
 	{
-		"openssh-server": ensure => isntalled;
+		"openssh-server": ensure => installed;
 	 }
 
 	file
