@@ -11,10 +11,10 @@ cron {"puppet update":
 
 node ip-10-0-8-128
 {
-	
+inlcude sshd	
 }
 
 node ip-10-0-8-17
 {
-	
+include sshd
 }
