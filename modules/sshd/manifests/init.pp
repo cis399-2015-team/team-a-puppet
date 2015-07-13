@@ -7,7 +7,7 @@ class sshd
 
 	file
 	{
-		"/etc/puppet.conf":
+		"/etc/ssh/sshd_config":
 		source => 
 		["puppet:///modules/sshd/$hostname/sshd_config",
 		"puppet:///modules/sshd/sshd_config", ], 
