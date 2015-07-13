@@ -30,9 +30,9 @@ class sshd
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["openssh-server"],
-		File["/etc/puppet/modules/sshd/sshd_config"] ],
+		File["/etc/ssh/sshd_config"] ],
 
-		subscribe => File["/etc/puppet/modules/sshd/sshd_config"],
+		subscribe => File["/etc/ssh/sshd_config"],
 
 	}
 
