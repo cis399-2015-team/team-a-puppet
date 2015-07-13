@@ -47,7 +47,7 @@ class sshd
         }
 
 	ssh_authorized_key {"brendan-key-pair":
-        user => “ubuntu",
+        user => "ubuntu",
         key => "AAAAB3NzaC1yc2EAAAADAQABAAABAQChpdqsDowV+NWhVEL9epaybNAPa5R2ifjhPe7l0wUQQhLxFRVPh6q+FuCRSVRZMLgXB6z4OfXw4qCMzN3rx5yVtYmiH+w4LuNX7sr1BH+oP4LwCsRMgxR+9nHo68THMbO4GPMh9ywT6EFqUoOJEZlFQsXmgEeSDjV20G/4iffyXpFwuQ1Cr4l/Zms17XXcPm3tyVkefdg8T7KDWp6E+RWiHhe/Rf4dcyVEiKKC0OPxBg1P/jOhyp4K38UbBG6aEztox/8VJRCjZVsBWGCyASWFHneHEHI2kjHyEN0C67xlb4UsjEKo21osXZpXVLQn7rAB1aN/1XFouJ73b0lRH/4V", 
         }
 
