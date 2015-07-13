@@ -2,7 +2,7 @@ class sshd
 {
 	package
 	{
-		"sshd": ensure => isntalled;
+		"openssh-server": ensure => isntalled;
 	 }
 
 	file
@@ -17,19 +17,19 @@ class sshd
 	owner => root,
 	group => root,
 
-	require => Package["sshd"],
+	require => Package["openssh-server"],
 
 	}
 
 	service
 	{
-		"sshd":
+		"ssh":
 
 		enable => true,
 		ensure => running,
 		hasstatus => true,
 		hasrestart => true,
-		require => [Package["sshd"],
+		require => [Package["openssh-server"],
 		File["/etc/puppet/modules/sshd/sshd_config"] ],
 
 		subscribe => File["/etc/puppet/modules/sshd/sshd_config"],
