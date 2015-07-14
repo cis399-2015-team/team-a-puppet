@@ -21,9 +21,16 @@ class sshd
 
 	}
 
+	case $operatingsystem 
+	{
+		'Amazon' :{$ssh_user = "ec2-user", $ssh_service_name = "sshd"  }
+		'Ubuntu' :{$ssh_user = "ubuntu", $ssh_service_name = "ssh"}
+
+	}
+
 	service
 	{
-		"ssh":
+		"$ssh_service_name":
 
 		enable => true,
 		ensure => running,
@@ -34,12 +41,6 @@ class sshd
 
 		subscribe => File["/etc/ssh/sshd_config"],
 
-	}
-
-	case $operatingsystem 
-	{
-		'Amazon' :{$ssh_user = "ec2-user" }
-		'Ubuntu' :{$ssh_user = "ubuntu"}
 	}
 
 	ssh_authorized_key {"austin-key-pair":
