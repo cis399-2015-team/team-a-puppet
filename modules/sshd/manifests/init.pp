@@ -25,14 +25,11 @@ class sshd
 	{
 		'Amazon' :{$ssh_user = "ec2-user"}
 		'Ubuntu' :{$ssh_user = "ubuntu"}
-
-		'Amazon' :{$ssh_service_name = "sshd"}
-		'Ubuntu' :{$ssh_service_name = "ssh"}
 	}
 
 	service
 	{
-		"$ssh_service_name":
+		"ssh":
 
 		enable => true,
 		ensure => running,
