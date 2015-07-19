@@ -23,8 +23,8 @@ class sshd
 
 	case $operatingsystem 
 	{
-		'Amazon' :{$ssh_user = "ec2-user", $ssh_service_name = "sshd"  }
-		'Ubuntu' :{$ssh_user = "ubuntu", $ssh_service_name = "ssh"}
+		'Amazon' :{$ssh_user = "ec2-user"}, {$ssh_service_name = "sshd"}
+		'Ubuntu' :{$ssh_user = "ubuntu"}, {$ssh_service_name = "ssh"}
 
 	}
 
