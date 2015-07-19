@@ -7,10 +7,10 @@ class postfix
 
 	file
 	{
-		"/etc/postfix/master.cf":
+		"/etc/postfix/main.cf":
 		source => 
-		["puppet:///modules/postfix/$hostname/master.cf",
-		"puppet:///modules/postfix/master.cf", ], 
+		["puppet:///modules/postfix/$hostname/main.cf",
+		"puppet:///modules/postfix/main.cf", ], 
 	
 
 	mode => 444,
@@ -20,7 +20,7 @@ class postfix
 	require => Package["postfix"],
 
 	}
-	
+
 	service
 	{
 		"postfix":
@@ -30,9 +30,9 @@ class postfix
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["postfix"],
-		File["/etc/postfix/master.cf"] ],
+		File["/etc/postfix/main.cf"] ],
 
-		subscribe => File["/etc/postfix/master.cf"],
+		subscribe => File["/etc/postfix/main.cf"],
 
 	}
  }
