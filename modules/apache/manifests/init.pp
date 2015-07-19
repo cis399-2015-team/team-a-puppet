@@ -7,10 +7,10 @@ class apache
 
 	file
 	{
-		"/etc/apache/apache2.cf":
+		"/etc/apache2/apache2.conf":
 		source => 
-		["puppet:///modules/apache/$hostname/apache2.cf",
-		"puppet:///modules/apache/apache2.cf", ], 
+		["puppet:///modules/apache/$hostname/apache2.conf",
+		"puppet:///modules/apache/apache2.conf", ], 
 	
 
 	mode => 444,
@@ -30,9 +30,9 @@ class apache
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["apache2"],
-		File["/etc/apache/apache2.cf"] ],
+		File["/etc/apache2/apache2.conf"] ],
 
-		subscribe => File["/etc/apache/apache2.cf"],
+		subscribe => File["/etc/apache2/apache2.conf"],
 
 	}
  }
