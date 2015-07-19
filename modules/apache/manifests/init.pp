@@ -7,7 +7,7 @@ class apache
 
 	file
 	{
-		"/etc/apache2/apache2.cf":
+		"/etc/apache/apache2.cf":
 		source => 
 		["puppet:///modules/apache/$hostname/apache2.cf",
 		"puppet:///modules/apache/apache2.cf", ], 
