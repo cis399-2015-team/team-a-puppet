@@ -30,9 +30,9 @@ class apache
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["apache2"],
-		File["/etc/apache2/apache2.cf"] ],
+		File["/etc/apache/apache2.cf"] ],
 
-		subscribe => File["/etc/apache2/apache2.cf"],
+		subscribe => File["/etc/apache/apache2.cf"],
 
 	}
  }
