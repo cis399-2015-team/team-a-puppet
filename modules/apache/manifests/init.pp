@@ -21,6 +21,22 @@ class apache
 
 	}
 
+	file
+	{
+		"var/www/html/hello.html":
+		source => 
+		["puppet:///modules/apache/$hostname/hello.html",
+		"puppet:///modules/apache/hello.html", ], 
+	
+
+	mode => 444,
+	owner => root,
+	group => root,
+
+	require => Package["apache2"],
+
+	}
+
 	service
 	{
 		"apache2":
@@ -30,7 +46,8 @@ class apache
 		hasstatus => true,
 		hasrestart => true,
 		require => [Package["apache2"],
-		File["/etc/apache2/apache2.conf"] ],
+		File["/etc/apache2/apache2.conf"],
+		File["/var/www/html/hello.html"] ],
 
 		subscribe => File["/etc/apache2/apache2.conf"],
 
