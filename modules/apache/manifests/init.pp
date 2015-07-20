@@ -7,15 +7,12 @@ class apache
 
 	file
 	{
-		"/etc/apache2/apache2.conf":
-		source => 
-		["puppet:///modules/apache/apache2.conf", ], 
-	
+		"/etc/apache/apache2.conf":
 
+	source => ["puppet:///modules/apache/apache2.conf", ], 
 	mode => 444,
 	owner => root,
 	group => root,
-
 	require => Package["apache2"],
 
 	}
@@ -23,14 +20,11 @@ class apache
 	file
 	{
 		"/var/www/html/hello.html":
-		source => 
-		["puppet:///modules/apache/hello.html", ], 
-	
-
+		
+	source => ["puppet:///modules/apache/hello.html", ], 
 	mode => 444,
 	owner => root,
 	group => root,
-
 	require => Package["apache2"],
 
 	}
@@ -43,9 +37,11 @@ class apache
 		ensure => running,
 		hasstatus => true,
 		hasrestart => true,
-		require => [Package["apache2"],
-		File["/etc/apache2/apache2.conf"],
-		File["/var/www/html/hello.html"] ],
+		require => [
+			Package["apache2"],
+			File["/etc/apache/apache2.conf"],
+			File["/var/www/html/hello.html"] 
+			],
 
 		subscribe => File["/etc/apache2/apache2.conf"],
 
