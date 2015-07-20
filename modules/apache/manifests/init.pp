@@ -40,7 +40,6 @@ class apache
 		require => [
 		Package["apache2"],
 			File["/etc/apache2/apache2.conf"],
-			File["/var/www/html/hello.html"] 
 			],
 
 		subscribe => File["/etc/apache2/apache2.conf"],
