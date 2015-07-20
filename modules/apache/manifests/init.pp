@@ -7,7 +7,7 @@ class apache
 
 	file
 	{
-		"/etc/apache/apache2.conf":
+		"/etc/apache2/apache2.conf":
 
 	source => ["puppet:///modules/apache/apache2.conf", ], 
 	mode => 444,
@@ -38,12 +38,12 @@ class apache
 		hasstatus => true,
 		hasrestart => true,
 		require => [
-			Package["apache2"],
-			File["/etc/apache/apache2.conf"],
+		Package["apache2"],
+			File["/etc/apache2/apache2.conf"],
 			File["/var/www/html/hello.html"] 
 			],
 
-		subscribe => File["/etc/apache/apache2.conf"],
+		subscribe => File["/etc/apache2/apache2.conf"],
 
 	}
  }
