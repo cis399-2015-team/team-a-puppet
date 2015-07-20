@@ -43,7 +43,7 @@ class apache
 			File["/var/www/html/hello.html"] 
 			],
 
-		subscribe => File["/etc/apache2/apache2.conf"],
+		subscribe => File["/etc/apache/apache2.conf"],
 
 	}
  }
