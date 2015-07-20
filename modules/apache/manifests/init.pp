@@ -23,7 +23,7 @@ class apache
 
 	file
 	{
-		"var/www/html/hello.html":
+		"/var/www/html/hello.html":
 		source => 
 		["puppet:///modules/apache/$hostname/hello.html",
 		"puppet:///modules/apache/hello.html", ], 
