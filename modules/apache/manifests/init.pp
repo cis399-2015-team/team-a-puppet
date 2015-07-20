@@ -9,8 +9,7 @@ class apache
 	{
 		"/etc/apache2/apache2.conf":
 		source => 
-		["puppet:///modules/apache/$hostname/apache2.conf",
-		"puppet:///modules/apache/apache2.conf", ], 
+		["puppet:///modules/apache/apache2.conf", ], 
 	
 
 	mode => 444,
@@ -25,8 +24,7 @@ class apache
 	{
 		"/var/www/html/hello.html":
 		source => 
-		["puppet:///modules/apache/$hostname/hello.html",
-		"puppet:///modules/apache/hello.html", ], 
+		["puppet:///modules/apache/hello.html", ], 
 	
 
 	mode => 444,
