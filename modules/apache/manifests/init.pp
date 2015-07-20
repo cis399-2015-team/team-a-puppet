@@ -17,18 +17,6 @@ class apache
 
 	}
 
-	file
-	{
-		"/var/www/html/hello.html":
-		
-	source => ["puppet:///modules/apache/hello.html", ], 
-	mode => 444,
-	owner => root,
-	group => root,
-	require => Package["apache2"],
-
-	}
-
 	service
 	{
 		"apache2":
