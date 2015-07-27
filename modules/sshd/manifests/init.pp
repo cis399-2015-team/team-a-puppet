@@ -29,8 +29,8 @@ class sshd
 
 	case $ssh_user
 	{
-		'Amazon' :{$ssh_type = "sshd"}
-		'Ubuntu' :{$ssh_type = "ssh"}
+		'ec2-user' :{$ssh_type = "sshd"}
+		'ubuntu' :{$ssh_type = "ssh"}
 	}
 
 	service
