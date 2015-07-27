@@ -39,7 +39,7 @@ class apache
 
 		recurse => true,
 
-		source => ["puppet:///modules/apache/"] 
+		source => ["puppet:///modules/apache/",] , 
 	}
 
 	service
