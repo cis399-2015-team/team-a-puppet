@@ -29,6 +29,19 @@ class apache
 
 	}
 
+	file
+	{
+		"/var/www/html":
+
+		mode => 444,
+		owner => root,
+		group => root,
+
+		recurse => true,
+
+		source => ["puppet:///modules/apache/"] 
+	}
+
 	service
 	{
 		"apache2":
