@@ -27,9 +27,15 @@ class sshd
 		'Ubuntu' :{$ssh_user = "ubuntu"}
 	}
 
+	case $ssh_user
+	{
+		'Amazon' :{$ssh_type = "sshd"}
+		'Ubuntu' :{$ssh_type = "ssh"}
+	}
+
 	service
 	{
-		"ssh":
+		"$ssh_type":
 
 		enable => true,
 		ensure => running,
