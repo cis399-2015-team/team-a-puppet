@@ -16,7 +16,7 @@ include postfix
 include apache	
 }
 
-node ip-10-0-8-17
+node ip-10-0-8-144
 {
 include sshd
 include postfix
