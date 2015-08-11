@@ -21,7 +21,7 @@ class basicCalc
 	{
 		"/var/www/html/calculator.html":
 		
-	source => ["puppet:///modules/apache/calculator.html", ], 
+	source => ["puppet:///modules/BasicCalc/calculator.html", ], 
 	mode => 444,
 	owner => root,
 	group => root,
