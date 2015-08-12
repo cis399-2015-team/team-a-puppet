@@ -10,7 +10,7 @@ class ejabberd {
 		source => ["puppet:///modules/ejabberd/ejabberd.cfg",],
 		mode => 444,
 		owner => root,
-		group =>root
+		group =>root,
 		require => Package["ejabberd"],
 	}
 
