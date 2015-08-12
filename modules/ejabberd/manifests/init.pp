@@ -5,7 +5,7 @@ class ejabberd {
 	}
 
 	file {
-		"/etc/ejabberd/ejabberd.cfg"
+		"/etc/ejabberd/ejabberd.cfg":
 
 		source => ["puppet:///modules/ejabberd/ejabberd.cfg",],
 		mode => 444,
@@ -15,7 +15,7 @@ class ejabberd {
 	}
 
 	service {
-		"ejabberd"
+		"ejabberd":
 
 		enable => true,
 		ensure => running,
