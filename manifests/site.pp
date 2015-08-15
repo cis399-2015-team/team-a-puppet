@@ -19,7 +19,5 @@ include apache
 node ip-10-0-8-144
 {
 include sshd
-include postfix
-include apache
 include ejabberd
 }
